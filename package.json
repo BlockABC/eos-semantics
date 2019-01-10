@@ -1,0 +1,27 @@
+{
+  "name": "eos-semantics",
+  "version": "0.0.1",
+  "description": "EOS Semantics -- Makes EOS contract understandable.",
+  "main": "dist/index.json",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node ./build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlockABC/eos-semantics.git"
+  },
+  "keywords": [
+    "EOS",
+    "contracts",
+    "semantics",
+    "EOSPark",
+    "explorer"
+  ],
+  "author": "Jeff Jing",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BlockABC/eos-semantics/issues"
+  },
+  "homepage": "https://github.com/BlockABC/eos-semantics#readme"
+}
