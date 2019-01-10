@@ -4,14 +4,14 @@
 ![EOSPark screenshot](./assets/eospark-screenshot.png)
 
 ## Why
-由于 EOS 合约的复杂性，普通用户很难理解链上发生了什么。Dapp 开发者也经常被用户质疑链上数据的含义。
+由于 EOS 合约的复杂性，普通用户很难理解链上发生了什么。Dapp 开发者也经常被用户质疑链上数据的含义。
 
 EOS Semantics 的出现，可以让普通用户也可以理解合约数据，降低普通用户的参与门槛，从而提高 Dapp 的活跃度。
 
 [EOSPark](https://eospark.com) 是第一个提出并实现合约语义化的区块链浏览器。最初只应用于系统合约，获得了用户的广泛好评。现在将其语义化能力开放出来，进一步服务于广大合约开发者。
 
 ## How
-EOS Semantics 的基本原理类似于李嘉图合约，即将合约 action 的数据通过一个 template 渲染成人类可读的自然语言。除此之外，EOS Semantics 提供了更多更为强大的功能，例如账号、合约跳转，代码高亮，多语言等等。
+EOS Semantics 的基本原理类似于李嘉图合约，即将合约 action 的数据通过一个 template 渲染成人类可读的自然语言。除此之外，EOS Semantics 提供了更多更为强大的功能，例如账号、合约跳转，代码高亮，多语言等等。
 
 以 EOS 系统合约 eosio.token 的 issue action 为例，其合约数据为:
 ```json
@@ -24,7 +24,7 @@ EOS Semantics 的基本原理类似于李嘉图合约，即将合约 action 的
 }
 ```
 
-则对应需要提供的语义化信息结构如下：
+则对应需要提供的语义化信息结构如下：
 ```json
 {
     "issue": {
@@ -44,7 +44,7 @@ EOS Semantics 的基本原理类似于李嘉图合约，即将合约 action 的
 ## 文档
 #### actionName
 
-可读的 action 名称
+可读的 action 名称
 
 #### tempalte
 
