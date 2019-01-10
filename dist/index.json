@@ -1,0 +1,290 @@
+{
+  "enbank.e": {
+    "withdraw": {
+      "en": {
+        "actionName": "Withdraw",
+        "template": "<Account :to=\"from\"/> withdraw staked {{quantity}}"
+      },
+      "zh": {
+        "actionName": "赎回质押",
+        "template": "<Account :to=\"from\"/> 赎回了质押的 {{quantity}}"
+      }
+    }
+  },
+  "eosio": {
+    "newaccount": {
+      "en": {
+        "actionName": "Create Account",
+        "template": "<Account :to=\"creator\"/> created new account <Account :to=\"name\"/>"
+      },
+      "zh": {
+        "actionName": "创建账户",
+        "template": "<Account :to=\"creator\"/> 创建了账户 <Account :to=\"name\"/>"
+      }
+    },
+    "buyrambytes": {
+      "en": {
+        "actionName": "Buy RAM",
+        "template": "<Account :to=\"payer\"/> bought {{bytes}} bytes RAM for <Account :to=\"receiver\"/>"
+      },
+      "zh": {
+        "actionName": "购买内存",
+        "template": "<Account :to=\"payer\"/> 为 <Account :to=\"receiver\"/> 购买了 {{bytes}} bytes内存"
+      }
+    },
+    "buyram": {
+      "en": {
+        "actionName": "Buy RAM",
+        "template": "<Account :to=\"payer\"/> bought {{quant}} RAM for <Account :to=\"receiver\"/>"
+      },
+      "zh": {
+        "actionName": "购买内存",
+        "template": "<Account :to=\"payer\"/> 为 <Account :to=\"receiver\"/> 购买了价值 {{quant}} 的内存"
+      }
+    },
+    "sellram": {
+      "en": {
+        "actionName": "Sell RAM",
+        "template": "<Account :to=\"account\" /> sold <Quantity :num=\"bytes\"/> bytes RAM"
+      },
+      "zh": {
+        "actionName": "卖出内存",
+        "template": "<Account :to=\"account\" /> 卖出了 <Quantity :num=\"bytes\"/> bytes的内存"
+      }
+    },
+    "delegatebw": {
+      "en": {
+        "actionName": "Stake Resource",
+        "template": "\n          <If :condition=\"transfer\"><Account :to=\"from\"/> delegated for <Account :to=\"receiver\"/> {{stake_net_quantity}} in Net and {{stake_cpu_quantity}} in CPU, with EOS transferred.</If>\n          <If :not=\"transfer\"><Account :to=\"from\"/> delegated for <Account :to=\"receiver\"/> {{stake_net_quantity}} in Net and {{stake_cpu_quantity}} in CPU, without EOS transferred.</If>\n        "
+      },
+      "zh": {
+        "actionName": "抵押资源",
+        "template": "\n          <If :condition=\"transfer\"><Account :to=\"from\"/> 为 <Account :to=\"receiver\"/> 抵押了价值 {{stake_net_quantity}} 的带宽和价值 {{stake_cpu_quantity}} 的CPU，并转移了EOS</If>\n          <If :not=\"transfer\"><Account :to=\"from\"/> 为 <Account :to=\"receiver\"/> 抵押了价值 {{stake_net_quantity}} 的带宽和价值 {{stake_cpu_quantity}} 的CPU，未转移EOS</If>\n        "
+      }
+    },
+    "undelegatebw": {
+      "en": {
+        "actionName": "Unstake Resource",
+        "template": "<Account :to=\"from\" /> unstaked from the account <Account :to=\"receiver\" /> {{unstake_net_quantity}} for Net and {{unstake_cpu_quantity}} for CPU"
+      },
+      "zh": {
+        "actionName": "赎回资源",
+        "template": "<Account :to=\"from\" /> 赎回了之前为 <Account :to=\"receiver\" /> 抵押的价值 {{unstake_net_quantity}} 的带宽和价值 {{unstake_cpu_quantity}} 的CPU"
+      }
+    },
+    "setcode": {
+      "en": {
+        "actionName": "Deploy Contract",
+        "template": "Contract code deployed to <Contract :to=\"account\" />"
+      },
+      "zh": {
+        "actionName": "部署智能合约",
+        "template": "<Contract :to=\"account\" /> 部署了一个智能合约"
+      }
+    },
+    "setabi": {
+      "en": {
+        "actionName": "Deploy Contract",
+        "template": " Contract ABI deployed to <Contract :to=\"account\" />"
+      },
+      "zh": {
+        "actionName": "部署智能合约",
+        "template": "<Contract :to=\"account\" /> 部署了一个智能合约的ABI接口"
+      }
+    },
+    "updateauth": {
+      "en": {
+        "actionName": "Update Auth",
+        "template": "<Account :to=\"account\" /> updated permission group {{permission}} <Highlight :json=\"auth\"/>"
+      },
+      "zh": {
+        "actionName": "修改权限",
+        "template": "<Account :to=\"account\" /> 将其 {{permission}} 权限更新为 <Highlight :json=\"auth\"/>"
+      }
+    },
+    "regproducer": {
+      "en": {
+        "actionName": "Register Producer",
+        "template": "<Account :to=\"producer\" /> updated BP info, with <Highlight :json=\"action.data\"/>"
+      },
+      "zh": {
+        "actionName": "更新节点信息",
+        "template": "<Account :to=\"producer\" /> 更新了节点信息 <Highlight :json=\"action.data\"/>"
+      }
+    },
+    "unregprod": {
+      "en": {
+        "actionName": "Unregister Producer",
+        "template": "<Account :to=\"producer\" /> unregistered Producer"
+      },
+      "zh": {
+        "actionName": "注销节点",
+        "template": "<Account :to=\"producer\" /> 注销了其节点身份"
+      }
+    },
+    "regproxy": {
+      "en": {
+        "actionName": "Register Proxy",
+        "template": "\n          <If :condition=\"isproxy\"><Account :to=\"proxy\" /> registered as a proxy</If>\n          <If :not=\"isproxy\"><Account :to=\"proxy\" /> unregistered as a proxy</If>\n        "
+      },
+      "zh": {
+        "actionName": "注册代理",
+        "template": "\n          <If :condition=\"isproxy\"><Account :to=\"proxy\" /> 注册了代理身份</If>\n          <If :not=\"isproxy\"><Account :to=\"proxy\" /> 注销了代理身份</If>\n        "
+      }
+    },
+    "bidname": {
+      "en": {
+        "actionName": "Account Bids",
+        "template": "<Account :to=\"bidder\" /> bid {{bid}} for the name <Account :to=\"newname\"/>"
+      },
+      "zh": {
+        "actionName": "竞拍账户",
+        "template": "<Account :to=\"bidder\" /> 以 {{bid}} 的价格竞拍账号 <Account :to=\"newname\"/>"
+      }
+    },
+    "voteproducer": {
+      "en": {
+        "actionName": "Vote",
+        "template": "\n          <If :condition=\"proxy\"><Account :to=\"voter\" /> delegate the votes to <Account :to=\"proxy\" /></If>\n          <If :not=\"proxy\"><Account :to=\"voter\" /> voted to <Accounts :accounts=\"producers\"/></If>\n        "
+      },
+      "zh": {
+        "actionName": "投票",
+        "template": "\n          <If :condition=\"proxy\"><Account :to=\"voter\" /> 将票委托给了代理 <Account :to=\"proxy\" /></If>\n          <If :not=\"proxy\"><Account :to=\"voter\" /> 投票给了 <Accounts :accounts=\"producers\"/></If>\n        "
+      }
+    },
+    "claimrewards": {
+      "en": {
+        "actionName": "Claim Rewards",
+        "template": "<Account :to=\"owner\"/> claimed rewards"
+      },
+      "zh": {
+        "actionName": "申领奖励",
+        "template": "<Account :to=\"owner\"/> 申领了奖励"
+      }
+    },
+    "linkauth": {
+      "en": {
+        "actionName": "Link Auth",
+        "template": "<Account :to=\"account\" />'s permission group {{requirement}} is authorized to access <ActionInterface :account=\"code\" :name=\"type\"/>"
+      },
+      "zh": {
+        "actionName": "授权",
+        "template": "<Account :to=\"account\" /> 授权其 {{requirement}} 权限组可以访问 <ActionInterface :account=\"code\" :name=\"type\"/>"
+      }
+    },
+    "unlinkauth": {
+      "en": {
+        "actionName": "Unlink Auth",
+        "template": "<Account :to=\"account\" />'s permission group prohibited to access contract <ActionInterface :account=\"code\" :name=\"type\"/>"
+      },
+      "zh": {
+        "actionName": "取消授权",
+        "template": "<Account :to=\"account\" /> 取消了相关权限组访问 <ActionInterface :account=\"code\" :name=\"type\"/> 的权限"
+      }
+    }
+  },
+  "eosio.token": {
+    "transfer": {
+      "en": {
+        "actionName": "Token Transfer",
+        "template": "<Transfer :from=\"from\" :to=\"to\" :quantity=\"quantity\" :contract=\"action.account\" :memo=\"memo\"/>"
+      },
+      "zh": {
+        "actionName": "代币转账",
+        "template": "<Transfer :from=\"from\" :to=\"to\" :quantity=\"quantity\" :contract=\"action.account\" :memo=\"memo\"/>"
+      }
+    },
+    "issue": {
+      "en": {
+        "actionName": "Token Issue",
+        "template": "System issued <Token :quantity=\"quantity\" contract=\"eosio.token\"/> to <Account :to=\"to\" /> <Memo>{{memo}}</Memo>"
+      },
+      "zh": {
+        "actionName": "代币增发",
+        "template": "系统增发了 <Token :quantity=\"quantity\" contract=\"eosio.token\"/> 给 <Account :to=\"to\" /> <Memo>{{memo}}</Memo>"
+      }
+    }
+  },
+  "whaleextrust": {
+    "verifytrade": {
+      "en": {
+        "actionName": "Trade",
+        "template": "<div>Trade: </div><div><Account :to='buyer'/> bought <Token :amount='base_amount' :symbolValue='base.value' :contract='base.contract'/>, </div><div><Account :to='seller'/> sold <Token :amount='quote_amount' :symbolValue='quote.value' :contract='quote.contract'/></div>"
+      },
+      "zh": {
+        "actionName": "成交",
+        "template": "<div>成交: </div><div><Account :to='buyer'/> 买入 <Token :amount='base_amount' :symbolValue='base.value' :contract='base.contract'/>, </div><div><Account :to='seller'/> 卖出 <Token :amount='quote_amount' :symbolValue='quote.value' :contract='quote.contract'/> </div>"
+      }
+    },
+    "verifyad": {
+      "en": {
+        "actionName": "AirGrab",
+        "template": "<Account :to='to'/> received <Token :quantity='asset.quantity' :contract='asset.contract'/> airdrop from <Account :to='from'/>"
+      },
+      "zh": {
+        "actionName": "领取",
+        "template": "<Account :to='to'/> 从 <Account :to='from'/> 领取 <Token :quantity='asset.quantity' :contract='asset.contract'/> 空投"
+      }
+    },
+    "verifywd": {
+      "en": {
+        "actionName": "Withdraw",
+        "template": "<Account :to='user'/> withdrew <Token :amount='amount' :symbolValue='token.value' :contract='token.contract'/> to EOS account"
+      },
+      "zh": {
+        "actionName": "提现",
+        "template": "<Account :to='user'/> 从合约提现 <Token :amount='amount' :symbolValue='token.value' :contract='token.contract'/> 到个人EOS帐户"
+      }
+    },
+    "verifystake": {
+      "en": {
+        "actionName": "Stake",
+        "template": "<Account :to='user'/> staked <Token :amount='amount' symbol='WAL' :decimals='3' contract='whaleextoken'/> for free transactions of equal value."
+      },
+      "zh": {
+        "actionName": "锁定",
+        "template": "<Account :to='user'/> 锁定 <Token :amount='amount' symbol='WAL' :decimals='3' contract='whaleextoken'/> 等值的免费交易额度"
+      }
+    },
+    "bind": {
+      "en": {
+        "actionName": "Bind",
+        "template": "<Account :to='user'/> bound a pair of public/private keys. Public key is: {{pub_key}}"
+      },
+      "zh": {
+        "actionName": "绑定",
+        "template": "<Account :to='user'/> 绑定了一对公私钥, 公钥为 {{pub_key}}"
+      }
+    },
+    "unbind": {
+      "en": {
+        "actionName": "Unbind",
+        "template": "<Account :to='user'/> unbound a pair of public/private keys. Public key is: {{pub_key}}"
+      },
+      "zh": {
+        "actionName": "解绑",
+        "template": "<Account :to='user'/> 解绑了一对公私钥, 公钥为 {{pub_key}}"
+      }
+    },
+    "clearing": {
+      "en": {
+        "actionName": "Clearing",
+        "template": "WhaleEx completed trade clearing, awaiting settlement."
+      },
+      "zh": {
+        "actionName": "清算",
+        "template": "WhaleEx完成了一批交易的清算, 等待结算"
+      }
+    },
+    "settlement": {
+      "en": {
+        "actionName": "Settlement",
+        "template": "WhaleEx completed trade settlement. Assets have been exchanged."
+      },
+      "zh": {
+        "actionName": "结算",
+        "template": "WhaleEx完成了一批交易的结算, 资产完成转移"
+      }
+    }
+  }
+}
