@@ -39,7 +39,26 @@ EOS Semantics 的基本原理类似于李嘉图合约，即将合约 action 的�
 ![eosio.token::issue](./assets/eosio.token-issue.png)
 
 
-在更为复杂的合约中，EOS Semantics 会进一步降低普通用户的加入门槛。
+## Contribution
+1. Clone
+```
+git clone https://github.com/BlockABC/eos-semantics
+cd eos-semantics
+```
+
+2. 增加语义化信息
+
+    2.1 在 [Playground](https://eospark.com/semantic/playground) 测试 template 数据
+
+    2.2 在 `/semantics` 目录下面新建以以合约账号为名的 .js 文件，并增加语义化信息。
+    > 具体语义化信息格式见下方的 [文档](https://github.com/BlockABC/eos-semantics#%E6%96%87%E6%A1%A3)，或参考已有的合约内容 [eosio](https://github.com/BlockABC/eos-semantics/blob/master/semantics/eosio.js)
+
+    2.3 编译
+    ```
+    npm run build
+    ```
+    2.4 提交 PR
+
 
 ## 文档
 #### actionName
@@ -98,17 +117,20 @@ if 组件，根据参数，条件为真/假时会渲染子组件
 ```
 
 #### Token
-渲染一个 Token，可以跳转到相应页面
+渲染一个 Token，可以带有数量，支持多种 token 格式
 
 ```html
-<!-- 只渲染 -->
-<Token :quantity="quantity" contract="eosio.token"/>
+<!-- 只渲染 Token 名称（和发币账户） -->
+<Token :symbol="symbol" contract="eosio.token"/>
 
-<Token :quantity="quantity" contract="eosio.token"/>
+<!-- 带有数量的 token -->
+<Token :symbol="symbol" contract="eosio.token" :amount="amount"/>
 
-<Token :quantity="quantity" contract="eosio.token"/>
+<!-- 链上数据可能存储的是无小数的数量，此时需要指明该 token 的小数位数 -->
+<Token :symbol="symbol" contract="eosio.token" :amount="amount" :decimals="4"/>
 
-<Token :quantity="quantity" contract="eosio.token"/>
+<!-- eos 内部表示方式的格式 -->
+<Token symbolValue="47575848338" quantity="123.4567 EOS"/>
 ```
 
 #### Highlight
@@ -118,7 +140,7 @@ if 组件，根据参数，条件为真/假时会渲染子组件
 ```
 
 #### Quantity
-渲染一个格式化好的数字（逗号分隔）
+渲染一个逗号分隔的数字
 ```html
 <Quantity :num="num"/>
 ```
@@ -129,3 +151,10 @@ if 组件，根据参数，条件为真/假时会渲染子组件
 ```html
 <ActionInterface :account="code" :name="type"/>
 ```
+
+
+## Contact
+请加 EOSPark 微信小助手进群联系我们: Asst_BlockAbC。
+
+![EOSPark Assist](./assets/wechat_eospark_assist.jpeg)
+
