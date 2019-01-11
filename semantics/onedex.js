@@ -23,11 +23,11 @@ module.exports = {
       "cancelorder": {
         "en": {
           "actionName": "Cancel Order",
-          "template": "Account <Account :to='maker'/> cancel the order that Identity Number is: {{uuid}}, scope is {{scope}}"
+          "template": "<Account :to='maker'/> cancel the order that Identity Number is: {{uuid}}, scope is {{scope}}"
         },
         "zh": {
           "actionName": "取消订单",
-          "template": "用户 <Account :to='maker'/> 取消订单id是{{uuid}}订单域是 {{scope}}"
+          "template": "<Account :to='maker'/> 取消订单id是{{uuid}}, 订单域是 {{scope}}"
         }
       },
       "createorder": {
