@@ -9,6 +9,16 @@ module.exports = {
         'template': "<div>成交: </div><div><Account :to='buyer'/> 买入 <Token :amount='base_amount' :symbolValue='base.value' :contract='base.contract'/>, </div><div><Account :to='seller'/> 卖出 <Token :amount='quote_amount' :symbolValue='quote.value' :contract='quote.contract'/> </div>"
       }
     },
+    'verifytrade2': {
+      'en': {
+        'actionName': 'Trade',
+        'template': "<div>Trade: </div><div><Account :to='buyer'/> bought <Token :amount='base_amount' :symbolValue='base.value' :contract='base.contract'/>, </div><div><Account :to='seller'/> sold <Token :amount='quote_amount' :symbolValue='quote.value' :contract='quote.contract'/></div>"
+      },
+      'zh': {
+        'actionName': '成交',
+        'template': "<div>成交: </div><div><Account :to='buyer'/> 买入 <Token :amount='base_amount' :symbolValue='base.value' :contract='base.contract'/>, </div><div><Account :to='seller'/> 卖出 <Token :amount='quote_amount' :symbolValue='quote.value' :contract='quote.contract'/> </div>"
+      }
+    },
     'verifyad': {
       'en': {
         'actionName': 'AirGrab',
@@ -20,6 +30,16 @@ module.exports = {
       }
     },
     'verifywd': {
+      'en': {
+        'actionName': 'Withdraw',
+        'template': "<Account :to='user'/> withdrew <Token :amount='amount' :symbolValue='token.value' :contract='token.contract'/> to EOS account"
+      },
+      'zh': {
+        'actionName': '提现',
+        'template': "<Account :to='user'/> 从合约提现 <Token :amount='amount' :symbolValue='token.value' :contract='token.contract'/> 到个人EOS帐户"
+      }
+    },
+    'verifywd2': {
       'en': {
         'actionName': 'Withdraw',
         'template': "<Account :to='user'/> withdrew <Token :amount='amount' :symbolValue='token.value' :contract='token.contract'/> to EOS account"
@@ -57,6 +77,16 @@ module.exports = {
       'zh': {
         'actionName': '解绑',
         'template': "<Account :to='user'/> 解绑了一对公私钥, 公钥为 {{pub_key}}"
+      }
+    },
+    'clearsettres': {
+      'en': {
+        'actionName': 'Clearing',
+        'template': 'WhaleEx cleared useless data for memory. '
+      },
+      'zh': {
+        'actionName': '清算',
+        'template': 'WhaleEx清理了一些无用数据来释放内存'
       }
     },
     'clearing': {
