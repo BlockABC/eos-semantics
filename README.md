@@ -4,16 +4,23 @@
 ![EOSPark screenshot](./assets/eospark-screenshot.png)
 
 ## Why
-由于 EOS 合约的复杂性，普通用户很难理解链上发生了什么。Dapp 开发者也经常被用户质疑链上数据的含义。
+It's hard for the average user to understand what is going on the chain due to the complexity.
 
-EOS Semantics 的出现，可以让普通用户也可以理解合约数据，降低普通用户的参与门槛，从而提高 Dapp 的活跃度。
+Dapp developers are also often questioned by users about the meaning of the data on the chain.
 
-[EOSPark](https://eospark.com) 是第一个提出并实现合约语义化的区块链浏览器。最初只应用于系统合约，获得了用户的广泛好评。现在将其语义化能力开放出来，进一步服务于广大合约开发者。
+
+The emergence of EOS Semantics can make common users understand contract data and lower the threshold for common users to participate, thus improving the activity of Dapp.
+
+[EOSPark](https://eospark.com) was the first EOS explorer to come up with and implement contract semantics.
+
+At first, it was only applied to system contract and won wide praise from users. We are now opening up its semantic capabilities to further serve the vast majority of contract developers.
 
 ## How
-EOS Semantics 的基本原理类似于李嘉图合约，即将合约 action 的数据通过一个 template 渲染成人类可读的自然语言。除此之外，EOS Semantics 提供了更多更为强大的功能，例如账号、合约跳转，代码高亮，多语言等等。
+The basic principle of EOS Semantics is similar to the [Ricardian Contract](http://iang.org/papers/ricardian_contract.html), which renders the data of a contract action into a human-readable natural language through a template.
 
-以 EOS 系统合约 eosio.token 的 issue action 为例，其合约数据为:
+In addition, EOS Semantics provides more powerful functions, such as account/contract link, code highlighting, multi-language and so on.
+
+Take EOS system contract eosio.token as example, it's contract action data is below:
 ```json
 {
   "data": {
@@ -24,7 +31,7 @@ EOS Semantics 的基本原理类似于李嘉图合约，即将合约 action 的�
 }
 ```
 
-则对应需要提供的语义化信息结构如下：
+The correspond needed semantic info is below:
 ```json
 {
     "issue": {
@@ -34,7 +41,7 @@ EOS Semantics 的基本原理类似于李嘉图合约，即将合约 action 的�
 }
 ```
 
-最终会渲染出如下结构:
+It will be finally rendered as below:
 
 ![eosio.token::issue](./assets/eosio.token-issue.png)
 
@@ -46,115 +53,115 @@ git clone https://github.com/BlockABC/eos-semantics
 cd eos-semantics
 ```
 
-2. 增加语义化信息
+2. Add semantics info
 
-    2.1 在 [Playground](https://eospark.com/semantic/playground) 测试 template 数据
+    2.1 Test your template info in [Playground](https://eospark.com/semantic/playground)
 
-    2.2 在 `/semantics` 目录下面新建以以合约账号为名的 .js 文件，并增加语义化信息。
-    > 具体语义化信息格式见下方的 [文档](https://github.com/BlockABC/eos-semantics#%E6%96%87%E6%A1%A3)，或参考已有的合约内容 [eosio](https://github.com/BlockABC/eos-semantics/blob/master/semantics/eosio.js)
+    2.2 Create new `.js` file under `/semantics` directory named by contract's account name, and add semantic info.
+    > For detailed semantic info see [DOC](https://github.com/BlockABC/eos-semantics#%E6%96%87%E6%A1%A3) below，or refer to existing contract semantic info [eosio](https://github.com/BlockABC/eos-semantics/blob/master/semantics/eosio.js)
 
-    2.3 编译
+    2.3 Compile
     ```
     npm run build
     ```
-    2.4 提交 PR
+3. Submit PR
 
 
-## 文档
+## Doc
 #### actionName
 
-可读的 action 名称
+Readable action name
 
 #### tempalte
 
-template 是一个 html 模板，采用了类似于 [Vue](https://vuejs.org) 的模板语法。如果您进行过前端开发，那对您应该是没有压力。
-需要注意的是，为了安全性，template 所采用的语法集是 Vue 的子集，并且限制了部分能力。
+`template` is a html template, taking a form like [Vue](https://vuejs.org) template syntax. It would be easy for you if you are familiar with Web Development.
 
-## Template 组件
-为了方便您的使用，EOS Semantics 还内置了一些组件，同时可以统一组件风格。
+One thing to be aware of, the syntax of template is a subset of Vue's template syntax for security.
+
+## Builtin Template Component
+EOS Semantics also has some builtin components to make it easier for you and we can then unify UI style.
 
 #### If
-if 组件，根据参数，条件为真/假时会渲染子组件
+`If` component will render different component based on condition.
 
 ```html
 <If :condition="true">Component on true</If>
 ```
 
 #### Link
-渲染一个 a 标签
+`Link` will render an `a` tag.
 ```html
 <Link :to="url">Some Web Page</Link>
 ```
 
 #### Accounts
-传入 accounts 数组，渲染accounts列表
+`Accounts` will receive accounts array as prop, and render a accounts list.
 ```html
 <Accounts :accounts="accounts" />
 ```
 
 #### Account
-渲染一个 a 标签，可以跳转到相应的 account 页面
+`Account` will render an 'a' tag, click which will redirect to correspond account page.
 ```html
 <Account :to="account" />
 ```
 
 #### Contract
-渲染一个 a 标签，可以跳转到相应的 contract 页面
+`Contract` will ren
+`Contract` will render an 'a' tag, click which will redirect to correspond contract page.
 ```html
 <Contract :to="account" />
 ```
 
 #### Transfer
-渲染一个转账信息
+`Transfer` will render transfer UI
 ```html
 <Transfer :from="from" :to="to" :quantity="quantity" :contract="action.account" :memo="memo"/>
 ```
 
 #### Memo
-渲染一个 memo(一般用于transfer)
+`Memo` will render memo ( Commonly used in transfer. ).
 ```html
 <Memo>{{memo}}</Memo>
 ```
 
 #### Token
-渲染一个 Token，可以带有数量，支持多种 token 格式
+`Token` will render a Token, support multiple token format.
 
 ```html
-<!-- 只渲染 Token 名称（和发币账户） -->
+<!-- Only Token name (and contract) will be rendered -->
 <Token :symbol="symbol" contract="eosio.token"/>
 
-<!-- 带有数量的 token -->
-<Token :symbol="symbol" contract="eosio.token" :amount="amount"/>
+<!-- Token with amount -->
+<Token :symbol="symbol" contract="eosio.token" :amount="123.456"/>
 
-<!-- 链上数据可能存储的是无小数的数量，此时需要指明该 token 的小数位数 -->
+<!-- Sometimes you need to specify token's decimals -->
 <Token :symbol="symbol" contract="eosio.token" :amount="amount" :decimals="4"/>
 
-<!-- eos 内部表示方式的格式 -->
+<!-- It can also receive what format is in EOS -->
 <Token symbolValue="47575848338" quantity="123.4567 EOS"/>
 ```
 
 #### Highlight
-渲染一个高亮的json
+`Highlight` will render a highlighted json
 ```html
 <Highlight :json="auth"/>
 ```
 
 #### Quantity
-渲染一个逗号分隔的数字
+`Quantity` will render a comma-separated number.
 ```html
 <Quantity :num="num"/>
 ```
 
 
 #### ActionInterface
-渲染一个 action 名称
+`ActionInterface` will render an action name.
 ```html
 <ActionInterface :account="code" :name="type"/>
 ```
 
 
 ## Contact
-请加 EOSPark 微信小助手进群联系我们: Asst_BlockAbC。
-
-![EOSPark Assist](./assets/wechat_eospark_assist.jpeg)
+For more information, please join us on telegram: [EOSPark Telegram](https://t.me/eospark)
 
