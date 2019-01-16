@@ -35,7 +35,7 @@ module.exports = {
       "template": "<Account :to='maker'/> create order <Token :quantity='quantity' :contract='ccontract'/> source is:{{source}}, order id is:{{uuid}}, price is: {{price}}"
     },
     "zh": {
-      "actionName": "取消订单",
+      "actionName": "打开订单",
       "template": "<Account :to='maker'/> 卖出 <Token :quantity='quantity' :contract='ccontract'/> 订单来源:{{source}}, 订单编号:{{uuid}}, 订单价格：{{price}}"
     }
   }
