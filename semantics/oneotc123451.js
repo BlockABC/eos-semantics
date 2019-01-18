@@ -102,21 +102,21 @@ module.exports = {
       "clientask": {
         "en": {
           "actionName": "Client Ask",
-          "template": "<Account :to='clientmaker'/> ask <Token :quantity='quantity' :contract='ask_contract'/> Merchant order id is:{{bizid}}, price is: {{price}}, legal type is {{legaltype}} and source is {{source}}"
+          "template": "<Account :to='clientmaker'/> ask <Token :quantity='quantity' :contract='contract'/> Merchant order id is:{{bizid}}, price is: {{price}}, legal type is {{legaltype}} and source is {{source}}"
         },
         "zh": {
           "actionName": "用户卖出",
-          "template": "<Account :to='clientmaker'/> 卖出 <Token :quantity='quantity' :contract='ask_contract'/> 商家订单号是:{{bizid}}, 价格是: {{price}}, 法币类型是 {{legaltype}} 订单来源是 {{source}}"
+          "template": "<Account :to='clientmaker'/> 卖出 <Token :quantity='quantity' :contract='contract'/> 商家订单号是:{{bizid}}, 价格是: {{price}}, 法币类型是 {{legaltype}} 订单来源是 {{source}}"
         }
       },
       "clientbid": {
         "en": {
           "actionName": "Client Bid",
-          "template": "<Account :to='clientmaker'/> bid <Token :quantity='quantity' :contract='ask_contract'/> Merchant order id is:{{bizid}}, price is: {{price}}, legal type is {{legaltype}} and source is {{source}}"
+          "template": "<Account :to='clientmaker'/> bid <Token :quantity='quantity' :contract='contract'/> Merchant order id is:{{bizid}}, price is: {{price}}, legal type is {{legaltype}} and source is {{source}}"
         },
         "zh": {
           "actionName": "用户买入",
-          "template": "<Account :to='clientmaker'/> 买入 <Token :quantity='quantity' :contract='ask_contract'/> 商家订单号是:{{bizid}}, 价格是: {{price}}, 法币类型是 {{legaltype}} 订单来源是 {{source}}"
+          "template": "<Account :to='clientmaker'/> 买入 <Token :quantity='quantity' :contract='contract'/> 商家订单号是:{{bizid}}, 价格是: {{price}}, 法币类型是 {{legaltype}} 订单来源是 {{source}}"
         }
       },
       "clientcancel": {
@@ -162,11 +162,11 @@ module.exports = {
       "openorder": {
         "en": {
           "actionName": "Open Order",
-          "template": "<Account :to='maker'/> open the order for <Token :quantity='quantity' :contract='ask_contract'/> memo is: {{memo}}"
+          "template": "<Account :to='maker'/> open the order for <Token :quantity='quantity' :contract='contract'/> memo is: {{memo}}"
         },
         "zh": {
           "actionName": "打开订单",
-          "template": "<Account :to='maker'/> 打开订单 <Token :quantity='quantity' :contract='ask_contract'/> 备注: {{memo}}"
+          "template": "<Account :to='maker'/> 打开订单 <Token :quantity='quantity' :contract='contract'/> 备注: {{memo}}"
         }
       },
       "checkfreeze": {
