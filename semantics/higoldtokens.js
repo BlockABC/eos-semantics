@@ -6,17 +6,17 @@ module.exports = {
       },
       'zh': {
         'actionName': '启动Proof of Stake挖矿',
-        'template': "<div>发行人启动{{base_token.slice(-4)}} token 的 Proof of Stake 挖矿</div><div>Connector Weight: CW={{weight.slice(0,-18)}}/1000</div><div>Base Stake Supply: R={{base_stake.slice(0,-4)}} Stake</div><div>Base Connector Balance: C={{base_token}}</div><div>Base Stake Price = C÷R÷CW</div><Memo>{{memo}}</Memo>"
+        'template': '<div>发行人启动{{base_token.slice(-4)}} token 的 Proof of Stake 挖矿</div><div>Connector Weight: CW={{weight.slice(0,-18)}}/1000</div><div>Base Stake Supply: R={{base_stake.slice(0,-4)}} Stake</div><div>Base Connector Balance: C={{base_token}}</div><div>Base Stake Price = C÷R÷CW</div><Memo>{{memo}}</Memo>'
       }
     },
     'pos': {
       'en': {
         'actionName': 'PoS Mining',
-        'template': "<Account :to='owner'/> Proof of Stake for <Token :symbol='symbol.split(',')[1]' contract='higoldtokens'/>"
+        'template': "<Account :to='owner'/> Proof of Stake for <Token :symbol='symbol.split(\",\")[1]' contract='higoldtokens'/>"
       },
       'zh': {
         'actionName': 'Pos挖矿',
-        'template': "<Account :to='owner'/> 进行了 <Token :symbol='symbol.split(',')[1]' contract='higoldtokens'/> Proof of Stake 挖矿"
+        'template': "<Account :to='owner'/> 进行了 <Token :symbol='symbol.split(\",\")[1]' contract='higoldtokens'/> Proof of Stake 挖矿"
       }
     },
     'buystake': {
