@@ -219,11 +219,11 @@
     "pos": {
       "en": {
         "actionName": "PoS Mining",
-        "template": "<Account :to='owner'/> Proof of Stake for <Token :symbol='symbol.split(',')[1]' contract='higoldtokens'/>"
+        "template": "<Account :to='owner'/> Proof of Stake for <Token :symbol='symbol.split(\",\")[1]' contract='higoldtokens'/>"
       },
       "zh": {
         "actionName": "Pos挖矿",
-        "template": "<Account :to='owner'/> 进行了 <Token :symbol='symbol.split(',')[1]' contract='higoldtokens'/> Proof of Stake 挖矿"
+        "template": "<Account :to='owner'/> 进行了 <Token :symbol='symbol.split(\",\")[1]' contract='higoldtokens'/> Proof of Stake 挖矿"
       }
     },
     "buystake": {
