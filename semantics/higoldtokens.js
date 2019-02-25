@@ -32,11 +32,11 @@ module.exports = {
     'sellstake': {
       'en': {
         'actionName': 'Sell Stake',
-        'template': "<Account :to='seller'/> Sell {{stake.split(' ')[0]}} Stake in <Token :symbol='stake.split(' ')[1]' contract='higoldtokens'/>"
+        'template': "<Account :to='seller'/> Sell {{stake.split(' ')[0]}} Stake in <Token :symbol='stake.slice(-3)' contract='higoldtokens'/>"
       },
       'zh': {
         'actionName': '出售Stake',
-        'template': "<Account :to='seller'/> 出售 {{stake.split(' ')[0]}} Stake 并获取 <Token :symbol='stake.split(' ')[1]' contract='higoldtokens'/>"
+        'template': "<Account :to='seller'/> 出售 {{stake.split(' ')[0]}} Stake 并获取 <Token :symbol='stake.slice(-3)' contract='higoldtokens'/>"
       }
     },
   }
