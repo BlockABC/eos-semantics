@@ -19,24 +19,24 @@ module.exports = {
         'template': "<Account :to='owner'/> 进行了 <Token :symbol='symbol.split(\",\")[1]' contract='higoldtokens'/> Proof of Stake 挖矿"
       }
     },
-    'buystake': {
+    'stake': {
       'en': {
-        'actionName': 'Buy Share',
-        'template': "<Account :to='buyer'/> Buy Share cost <Token :quantity='quantity' contract='higoldtokens'/>"
+        'actionName': 'Stake',
+        'template': "<Account :to='owner'/> Staked <Token :quantity='quantity' contract='higoldtokens'/>"
       },
       'zh': {
         'actionName': '购买Share',
-        'template': "<Account :to='buyer'/> 购买了价值 <Token :quantity='quantity' contract='higoldtokens'/> 的 Share"
+        'template': "<Account :to='owner'/> 购买了价值 <Token :quantity='quantity' contract='higoldtokens'/> 的 Share"
       }
     },
-    'sellstake': {
+    'unstake': {
       'en': {
-        'actionName': 'Sell Share',
-        'template': "<Account :to='seller'/> Sell {{stake.split(' ')[0]}} Share in <Token :symbol='stake.slice(-3)' contract='higoldtokens'/>"
+        'actionName': 'Unstake',
+        'template': "<Account :to='owner'/> Unstake {{stake.split(' ')[0]}} Share in <Token :symbol='stake.slice(-3)' contract='higoldtokens'/>"
       },
       'zh': {
         'actionName': '出售Share',
-        'template': "<Account :to='seller'/> 出售 {{stake.split(' ')[0]}} Share 并获取 <Token :symbol='stake.slice(-3)' contract='higoldtokens'/>"
+        'template': "<Account :to='owner'/> 出售 {{stake.split(' ')[0]}} Share 并获取 <Token :symbol='stake.slice(-3)' contract='higoldtokens'/>"
       }
     },
   }
